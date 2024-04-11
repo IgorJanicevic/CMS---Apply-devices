@@ -1,0 +1,222 @@
+﻿<Window
+    x:Class="Projekat.Pages.AddItemPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:fa5="http://schemas.fontawesome.com/icons/"
+    xmlns:local="clr-namespace:Projekat.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xceed="http://schemas.xceed.com/wpf/xaml/toolkit"
+    Title="AddItemPage"
+    Width="700"
+    Height="450"
+    AllowsTransparency="True"
+    Background="Transparent"
+    WindowStartupLocation="CenterScreen"
+    WindowStyle="None"
+    mc:Ignorable="d">
+    <Canvas>
+        <Rectangle Style="{StaticResource StyleForPage}" />
+        <Grid Margin="20,10,20,0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="4*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Height="60" Margin="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+
+
+                <TextBox
+                    x:Name="TitleTextBox"
+                    Width="325"
+                    Height="30"
+                    BorderBrush="White"
+                    FontFamily="Roboto"
+                    FontSize="28"
+                    Foreground="LightGray"
+                    GotFocus="TitleTextBox_GotFocus"
+                    LostFocus="TitleTextBox_LostFocus"
+                    Text="Title" />
+                <Label
+                    x:Name="TitleErrorLabel"
+                    Grid.Row="1"
+                    Content=""
+                    FontSize="10"
+                    Foreground="Red" />
+
+                <Label
+                    Grid.Column="1"
+                    Height="40"
+                    Content="ID:"
+                    FontSize="20" />
+                <TextBox
+                    x:Name="IDTextBox"
+                    Grid.Column="1"
+                    Width="30"
+                    Height="30"
+                    Margin="36,5,104,5"
+                    FontSize="20"
+                    Foreground="Gray"
+                    GotFocus="IDTextBox_GotFocus"
+                    LostFocus="IDTextBox_LostFocus"
+                    Text="0" />
+                <Label
+                    x:Name="IDErrorLabel"
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Content=""
+                    FontSize="10"
+                    Foreground="Red" />
+
+                <Button
+                    x:Name="btnClose"
+                    Grid.Column="2"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top"
+                    Click="btnClose_Click"
+                    Content="X"
+                    Style="{StaticResource CloseButtonStyle}" />
+
+
+            </Grid>
+
+
+            <StackPanel
+                Grid.Row="1"
+                Margin="0,3,0,10"
+                Background="#f6f7f7">
+                <ToolBar Name="EditorToolBar" Height="30">
+                    <ToggleButton
+                        x:Name="BoldToggleButton"
+                        Command="EditingCommands.ToggleBold"
+                        ToolTip="Bold">
+                        <fa5:SvgAwesome
+                            Height="15"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="Black"
+                            Icon="Solid_Bold" />
+                    </ToggleButton>
+                    <Separator />
+                    <ToggleButton
+                        Name="ItalicToggleButton"
+                        Command="EditingCommands.ToggleItalic"
+                        ToolTip="Italic">
+                        <fa5:SvgAwesome
+                            Height="15"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="Black"
+                            Icon="Solid_Italic" />
+                    </ToggleButton>
+                    <Separator />
+                    <ToggleButton
+                        Name="UnderlineToggleButton"
+                        Command="EditingCommands.ToggleUnderline"
+                        ToolTip="Underline">
+                        <fa5:SvgAwesome
+                            Height="15"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Foreground="Black"
+                            Icon="Solid_Underline" />
+                    </ToggleButton>
+                    <Separator />
+                    <ComboBox
+                        Name="FontFamilyComboBox"
+                        Width="150"
+                        IsTextSearchCaseSensitive="False"
+                        IsTextSearchEnabled="True"
+                        SelectionChanged="FontFamilyComboBox_SelectionChanged" />
+                    <Separator />
+                    <ComboBox
+                        Name="FontSizeComboBox"
+                        Width="60"
+                        IsTextSearchCaseSensitive="False"
+                        IsTextSearchEnabled="True"
+                        SelectedIndex="2"
+                        SelectionChanged="FontSizeComboBox_SelectionChanged"
+                        ToolTip="Font Size" />
+                    <Separator Margin="10,0,0,0" />
+                    <ComboBox
+                        x:Name="FontColorComboBox"
+                        Width="200"
+                        Margin="10,0,0,0"
+                        IsTextSearchCaseSensitive="True"
+                        IsTextSearchEnabled="True"
+                        SelectionChanged="FontColorComboBox_SelectionChanged">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Rectangle Width="16" Height="16">
+                                        <Rectangle.Fill>
+                                            <SolidColorBrush Color="{Binding Color}" />
+                                        </Rectangle.Fill>
+                                    </Rectangle>
+                                    <TextBlock Margin="5,0,0,0" Text="{Binding Name}" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+
+                </ToolBar>
+                <StackPanel Orientation="Vertical">
+                    <RichTextBox
+                        x:Name="EditorRichTextBox"
+                        Width="665"
+                        Height="217"
+                        SelectionChanged="EditorRichTextBox_SelectionChanged"
+                        TextChanged="EditorRichTextBox_TextChanged" />
+                    <StatusBar>
+                        <StatusBarItem>
+                            <TextBlock Text="Count:" />
+                        </StatusBarItem>
+                        <StatusBarItem Width="588">
+                            <TextBlock x:Name="WordCountTextBlock" />
+                        </StatusBarItem>
+                    </StatusBar>
+                </StackPanel>
+
+                <StackPanel Height="100" Orientation="Horizontal">
+
+                    <Button
+                        x:Name="btnChooseImage"
+                        Width="137"
+                        Height="40"
+                        Margin="5,0,10,0"
+                        Click="btnChooseImage_Click"
+                        Content="🔎Choose Image"
+                        Style="{StaticResource button}" />
+                    <Image
+                        x:Name="PreviewImage"
+                        Width="100"
+                        Height="90"
+                        Margin="0,10,10,0" />
+                    <Button
+                        x:Name="btnSaveChanges"
+                        Width="137"
+                        Height="40"
+                        Margin="262,0,0,0"
+                        Click="btnSaveChanges_Click"
+                        Content="Save"
+                        Style="{StaticResource button}" />
+                </StackPanel>
+            </StackPanel>
+
+
+        </Grid>
+    </Canvas>
+</Window>

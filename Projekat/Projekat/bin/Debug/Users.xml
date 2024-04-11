@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <User>
+    <Name>Admin</Name>
+    <Password>admin</Password>
+    <Role>Admin</Role>
+  </User>
+  <User>
+    <Name>Guest</Name>
+    <Password>guest</Password>
+    <Role>Guest</Role>
+  </User>
+  <User>
+    <Name>Igor</Name>
+    <Password>123</Password>
+    <Role>Admin</Role>
+  </User>
+</ArrayOfUser>

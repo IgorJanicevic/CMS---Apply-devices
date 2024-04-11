@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<ArrayOfContentItem xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ContentItem>
+    <ID>4</ID>
+    <Title>Macbook 2</Title>
+    <Description />
+    <ImagePath>C:\Users\HomePC\Desktop\FFFF\Projekat\Projekat\Images\macbook1.jpg</ImagePath>
+    <RtfFilePath>Macbook-24.rtf</RtfFilePath>
+    <DataAdded>2024-03-20T21:59:20.4225509+01:00</DataAdded>
+    <IsSelected>false</IsSelected>
+  </ContentItem>
+  <ContentItem>
+    <ID>2</ID>
+    <Title>Iphone 15</Title>
+    <Description />
+    <ImagePath>C:\Users\HomePC\Desktop\FFFF\Projekat\Projekat\Images\iphone11.jpg</ImagePath>
+    <RtfFilePath>Iphone-152.rtf</RtfFilePath>
+    <DataAdded>2024-03-21T22:54:46.5166474+01:00</DataAdded>
+    <IsSelected>false</IsSelected>
+  </ContentItem>
+  <ContentItem>
+    <ID>9</ID>
+    <Title>Apple Watch S9</Title>
+    <Description />
+    <ImagePath>C:\Users\HomePC\Desktop\FFFF\Projekat\Projekat\Images\appleWatchs9.jpg</ImagePath>
+    <RtfFilePath>Apple-Watch-S99.rtf</RtfFilePath>
+    <DataAdded>2024-03-21T23:03:46.0403963+01:00</DataAdded>
+    <IsSelected>false</IsSelected>
+  </ContentItem>
+  <ContentItem>
+    <ID>15</ID>
+    <Title>Apple Vison</Title>
+    <Description />
+    <ImagePath>C:\Users\HomePC\Desktop\FFFF\Projekat\Projekat\Images\appleVison.jpg</ImagePath>
+    <RtfFilePath>Apple-Vison15.rtf</RtfFilePath>
+    <DataAdded>2024-03-22T15:08:36.5365665+01:00</DataAdded>
+    <IsSelected>false</IsSelected>
+  </ContentItem>
+  <ContentItem>
+    <ID>1</ID>
+    <Title>iPod</Title>
+    <Description />
+    <ImagePath>C:\Users\HomePC\Desktop\FFFF\Projekat\Projekat\Images\iPod1.jpg</ImagePath>
+    <RtfFilePath>iPod1.rtf</RtfFilePath>
+    <DataAdded>2024-03-25T20:41:02.5653481+01:00</DataAdded>
+    <IsSelected>false</IsSelected>
+  </ContentItem>
+</ArrayOfContentItem>
